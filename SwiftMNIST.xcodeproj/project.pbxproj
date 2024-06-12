@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		614AE3012C171AF8001ABC23 /* SwiftMNISTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614AE3002C171AF8001ABC23 /* SwiftMNISTTests.swift */; };
+		615CC6172C19BC4200FA25FA /* t10k-images-idx3-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC6082C19BC4200FA25FA /* t10k-images-idx3-ubyte */; };
+		615CC6182C19BC4200FA25FA /* t10k-labels-idx1-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC60A2C19BC4200FA25FA /* t10k-labels-idx1-ubyte */; };
+		615CC6192C19BC4200FA25FA /* train-images-idx3-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC60C2C19BC4200FA25FA /* train-images-idx3-ubyte */; };
+		615CC61A2C19BC4200FA25FA /* train-labels-idx1-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC60E2C19BC4200FA25FA /* train-labels-idx1-ubyte */; };
+		615CC61B2C19BC4200FA25FA /* MnistDataloader.py in Resources */ = {isa = PBXBuildFile; fileRef = 615CC6102C19BC4200FA25FA /* MnistDataloader.py */; };
+		615CC61C2C19BC4200FA25FA /* MnistDemo.py in Resources */ = {isa = PBXBuildFile; fileRef = 615CC6112C19BC4200FA25FA /* MnistDemo.py */; };
+		615CC61D2C19BC4200FA25FA /* t10k-images.idx3-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC6122C19BC4200FA25FA /* t10k-images.idx3-ubyte */; };
+		615CC61E2C19BC4200FA25FA /* t10k-labels.idx1-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC6132C19BC4200FA25FA /* t10k-labels.idx1-ubyte */; };
+		615CC61F2C19BC4200FA25FA /* train-images.idx3-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC6142C19BC4200FA25FA /* train-images.idx3-ubyte */; };
+		615CC6202C19BC4200FA25FA /* train-labels.idx1-ubyte in Resources */ = {isa = PBXBuildFile; fileRef = 615CC6152C19BC4200FA25FA /* train-labels.idx1-ubyte */; };
+		616A3C212C19BE880083CF7A /* MNISTSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C202C19BE880083CF7A /* MNISTSample.swift */; };
+		616A3C232C19BE9B0083CF7A /* MNISTDataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C222C19BE9B0083CF7A /* MNISTDataset.swift */; };
+		616A3C252C19BED00083CF7A /* MNISTDataset+fromBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C242C19BED00083CF7A /* MNISTDataset+fromBundle.swift */; };
+		616A3C282C19BFBC0083CF7A /* MNISTDatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */; };
+		619A870E2C19BABD0052A3D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */; };
+		619A870F2C19BABD0052A3D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 619A87062C19BABD0052A3D8 /* Assets.xcassets */; };
+		619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A87072C19BABD0052A3D8 /* ContentView.swift */; };
+		619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */; };
+		619A87132C19BABD0052A3D8 /* ProjectLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870B2C19BABD0052A3D8 /* ProjectLog.md */; };
+		619A87142C19BABD0052A3D8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870C2C19BABD0052A3D8 /* Readme.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		614AE2FD2C171AF8001ABC23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 614AE2E32C171AF7001ABC23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 614AE2EA2C171AF7001ABC23;
+			remoteInfo = NeuralNet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		614AE2EB2C171AF7001ABC23 /* SwiftMNIST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMNIST.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		614AE2FC2C171AF8001ABC23 /* SwiftMNISTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMNISTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		614AE3002C171AF8001ABC23 /* SwiftMNISTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMNISTTests.swift; sourceTree = "<group>"; };
+		615CC6082C19BC4200FA25FA /* t10k-images-idx3-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "t10k-images-idx3-ubyte"; sourceTree = "<group>"; };
+		615CC60A2C19BC4200FA25FA /* t10k-labels-idx1-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "t10k-labels-idx1-ubyte"; sourceTree = "<group>"; };
+		615CC60C2C19BC4200FA25FA /* train-images-idx3-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "train-images-idx3-ubyte"; sourceTree = "<group>"; };
+		615CC60E2C19BC4200FA25FA /* train-labels-idx1-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "train-labels-idx1-ubyte"; sourceTree = "<group>"; };
+		615CC6102C19BC4200FA25FA /* MnistDataloader.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = MnistDataloader.py; sourceTree = "<group>"; };
+		615CC6112C19BC4200FA25FA /* MnistDemo.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = MnistDemo.py; sourceTree = "<group>"; };
+		615CC6122C19BC4200FA25FA /* t10k-images.idx3-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "t10k-images.idx3-ubyte"; sourceTree = "<group>"; };
+		615CC6132C19BC4200FA25FA /* t10k-labels.idx1-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "t10k-labels.idx1-ubyte"; sourceTree = "<group>"; };
+		615CC6142C19BC4200FA25FA /* train-images.idx3-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "train-images.idx3-ubyte"; sourceTree = "<group>"; };
+		615CC6152C19BC4200FA25FA /* train-labels.idx1-ubyte */ = {isa = PBXFileReference; lastKnownFileType = file; path = "train-labels.idx1-ubyte"; sourceTree = "<group>"; };
+		616A3C202C19BE880083CF7A /* MNISTSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTSample.swift; sourceTree = "<group>"; };
+		616A3C222C19BE9B0083CF7A /* MNISTDataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTDataset.swift; sourceTree = "<group>"; };
+		616A3C242C19BED00083CF7A /* MNISTDataset+fromBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNISTDataset+fromBundle.swift"; sourceTree = "<group>"; };
+		616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTDatasetView.swift; sourceTree = "<group>"; };
+		619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		619A87062C19BABD0052A3D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		619A87072C19BABD0052A3D8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		619A87092C19BABD0052A3D8 /* SwiftMNIST.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SwiftMNIST.entitlements; sourceTree = "<group>"; };
+		619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMNISTApp.swift; sourceTree = "<group>"; };
+		619A870B2C19BABD0052A3D8 /* ProjectLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = ProjectLog.md; path = ../ProjectLog.md; sourceTree = "<group>"; };
+		619A870C2C19BABD0052A3D8 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../Readme.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		614AE2E82C171AF7001ABC23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614AE2F92C171AF8001ABC23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		614AE2E22C171AF7001ABC23 = {
+			isa = PBXGroup;
+			children = (
+				619A870D2C19BABD0052A3D8 /* SwiftMNIST */,
+				614AE2FF2C171AF8001ABC23 /* SwiftMNISTTests */,
+				614AE2EC2C171AF7001ABC23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		614AE2EC2C171AF7001ABC23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				614AE2EB2C171AF7001ABC23 /* SwiftMNIST.app */,
+				614AE2FC2C171AF8001ABC23 /* SwiftMNISTTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		614AE2FF2C171AF8001ABC23 /* SwiftMNISTTests */ = {
+			isa = PBXGroup;
+			children = (
+				614AE3002C171AF8001ABC23 /* SwiftMNISTTests.swift */,
+			);
+			path = SwiftMNISTTests;
+			sourceTree = "<group>";
+		};
+		615CC6092C19BC4200FA25FA /* t10k-images-idx3-ubyte */ = {
+			isa = PBXGroup;
+			children = (
+				615CC6082C19BC4200FA25FA /* t10k-images-idx3-ubyte */,
+			);
+			path = "t10k-images-idx3-ubyte";
+			sourceTree = "<group>";
+		};
+		615CC60B2C19BC4200FA25FA /* t10k-labels-idx1-ubyte */ = {
+			isa = PBXGroup;
+			children = (
+				615CC60A2C19BC4200FA25FA /* t10k-labels-idx1-ubyte */,
+			);
+			path = "t10k-labels-idx1-ubyte";
+			sourceTree = "<group>";
+		};
+		615CC60D2C19BC4200FA25FA /* train-images-idx3-ubyte */ = {
+			isa = PBXGroup;
+			children = (
+				615CC60C2C19BC4200FA25FA /* train-images-idx3-ubyte */,
+			);
+			path = "train-images-idx3-ubyte";
+			sourceTree = "<group>";
+		};
+		615CC60F2C19BC4200FA25FA /* train-labels-idx1-ubyte */ = {
+			isa = PBXGroup;
+			children = (
+				615CC60E2C19BC4200FA25FA /* train-labels-idx1-ubyte */,
+			);
+			path = "train-labels-idx1-ubyte";
+			sourceTree = "<group>";
+		};
+		615CC6162C19BC4200FA25FA /* MNIST */ = {
+			isa = PBXGroup;
+			children = (
+				615CC6092C19BC4200FA25FA /* t10k-images-idx3-ubyte */,
+				615CC60B2C19BC4200FA25FA /* t10k-labels-idx1-ubyte */,
+				615CC60D2C19BC4200FA25FA /* train-images-idx3-ubyte */,
+				615CC60F2C19BC4200FA25FA /* train-labels-idx1-ubyte */,
+				615CC6102C19BC4200FA25FA /* MnistDataloader.py */,
+				615CC6112C19BC4200FA25FA /* MnistDemo.py */,
+				615CC6122C19BC4200FA25FA /* t10k-images.idx3-ubyte */,
+				615CC6132C19BC4200FA25FA /* t10k-labels.idx1-ubyte */,
+				615CC6142C19BC4200FA25FA /* train-images.idx3-ubyte */,
+				615CC6152C19BC4200FA25FA /* train-labels.idx1-ubyte */,
+			);
+			path = MNIST;
+			sourceTree = "<group>";
+		};
+		616A3C1F2C19BE760083CF7A /* MNISTReader */ = {
+			isa = PBXGroup;
+			children = (
+				616A3C202C19BE880083CF7A /* MNISTSample.swift */,
+				616A3C222C19BE9B0083CF7A /* MNISTDataset.swift */,
+				616A3C242C19BED00083CF7A /* MNISTDataset+fromBundle.swift */,
+			);
+			path = MNISTReader;
+			sourceTree = "<group>";
+		};
+		616A3C262C19BF410083CF7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				619A87072C19BABD0052A3D8 /* ContentView.swift */,
+				616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		619A87052C19BABD0052A3D8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		619A870D2C19BABD0052A3D8 /* SwiftMNIST */ = {
+			isa = PBXGroup;
+			children = (
+				619A870C2C19BABD0052A3D8 /* Readme.md */,
+				619A870B2C19BABD0052A3D8 /* ProjectLog.md */,
+				616A3C1F2C19BE760083CF7A /* MNISTReader */,
+				616A3C262C19BF410083CF7A /* View */,
+				619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */,
+				615CC6162C19BC4200FA25FA /* MNIST */,
+				619A87052C19BABD0052A3D8 /* Preview Content */,
+				619A87062C19BABD0052A3D8 /* Assets.xcassets */,
+				619A87092C19BABD0052A3D8 /* SwiftMNIST.entitlements */,
+			);
+			path = SwiftMNIST;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		614AE2EA2C171AF7001ABC23 /* SwiftMNIST */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 614AE3102C171AF8001ABC23 /* Build configuration list for PBXNativeTarget "SwiftMNIST" */;
+			buildPhases = (
+				614AE2E72C171AF7001ABC23 /* Sources */,
+				614AE2E82C171AF7001ABC23 /* Frameworks */,
+				614AE2E92C171AF7001ABC23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftMNIST;
+			productName = NeuralNet;
+			productReference = 614AE2EB2C171AF7001ABC23 /* SwiftMNIST.app */;
+			productType = "com.apple.product-type.application";
+		};
+		614AE2FB2C171AF8001ABC23 /* SwiftMNISTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 614AE3132C171AF8001ABC23 /* Build configuration list for PBXNativeTarget "SwiftMNISTTests" */;
+			buildPhases = (
+				614AE2F82C171AF8001ABC23 /* Sources */,
+				614AE2F92C171AF8001ABC23 /* Frameworks */,
+				614AE2FA2C171AF8001ABC23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				614AE2FE2C171AF8001ABC23 /* PBXTargetDependency */,
+			);
+			name = SwiftMNISTTests;
+			productName = NeuralNetTests;
+			productReference = 614AE2FC2C171AF8001ABC23 /* SwiftMNISTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		614AE2E32C171AF7001ABC23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					614AE2EA2C171AF7001ABC23 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					614AE2FB2C171AF8001ABC23 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 614AE2EA2C171AF7001ABC23;
+					};
+				};
+			};
+			buildConfigurationList = 614AE2E62C171AF7001ABC23 /* Build configuration list for PBXProject "SwiftMNIST" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 614AE2E22C171AF7001ABC23;
+			productRefGroup = 614AE2EC2C171AF7001ABC23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				614AE2EA2C171AF7001ABC23 /* SwiftMNIST */,
+				614AE2FB2C171AF8001ABC23 /* SwiftMNISTTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		614AE2E92C171AF7001ABC23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615CC61E2C19BC4200FA25FA /* t10k-labels.idx1-ubyte in Resources */,
+				615CC6202C19BC4200FA25FA /* train-labels.idx1-ubyte in Resources */,
+				615CC6192C19BC4200FA25FA /* train-images-idx3-ubyte in Resources */,
+				615CC61C2C19BC4200FA25FA /* MnistDemo.py in Resources */,
+				619A87132C19BABD0052A3D8 /* ProjectLog.md in Resources */,
+				615CC61B2C19BC4200FA25FA /* MnistDataloader.py in Resources */,
+				615CC6182C19BC4200FA25FA /* t10k-labels-idx1-ubyte in Resources */,
+				615CC61F2C19BC4200FA25FA /* train-images.idx3-ubyte in Resources */,
+				619A87142C19BABD0052A3D8 /* Readme.md in Resources */,
+				615CC61D2C19BC4200FA25FA /* t10k-images.idx3-ubyte in Resources */,
+				619A870E2C19BABD0052A3D8 /* Preview Assets.xcassets in Resources */,
+				615CC6172C19BC4200FA25FA /* t10k-images-idx3-ubyte in Resources */,
+				615CC61A2C19BC4200FA25FA /* train-labels-idx1-ubyte in Resources */,
+				619A870F2C19BABD0052A3D8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614AE2FA2C171AF8001ABC23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		614AE2E72C171AF7001ABC23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */,
+				616A3C212C19BE880083CF7A /* MNISTSample.swift in Sources */,
+				616A3C232C19BE9B0083CF7A /* MNISTDataset.swift in Sources */,
+				616A3C282C19BFBC0083CF7A /* MNISTDatasetView.swift in Sources */,
+				616A3C252C19BED00083CF7A /* MNISTDataset+fromBundle.swift in Sources */,
+				619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		614AE2F82C171AF8001ABC23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				614AE3012C171AF8001ABC23 /* SwiftMNISTTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		614AE2FE2C171AF8001ABC23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 614AE2EA2C171AF7001ABC23 /* SwiftMNIST */;
+			targetProxy = 614AE2FD2C171AF8001ABC23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		614AE30E2C171AF8001ABC23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		614AE30F2C171AF8001ABC23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		614AE3112C171AF8001ABC23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftMNIST/SwiftMNIST.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMNIST/Preview Content\"";
+				DEVELOPMENT_TEAM = B56488KY8L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nu.visschers.SwiftMNIST;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		614AE3122C171AF8001ABC23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftMNIST/SwiftMNIST.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMNIST/Preview Content\"";
+				DEVELOPMENT_TEAM = B56488KY8L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nu.visschers.SwiftMNIST;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		614AE3142C171AF8001ABC23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B56488KY8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nu.visschers.NeuralNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftMNIST.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftMNIST";
+			};
+			name = Debug;
+		};
+		614AE3152C171AF8001ABC23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B56488KY8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nu.visschers.NeuralNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftMNIST.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftMNIST";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		614AE2E62C171AF7001ABC23 /* Build configuration list for PBXProject "SwiftMNIST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				614AE30E2C171AF8001ABC23 /* Debug */,
+				614AE30F2C171AF8001ABC23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		614AE3102C171AF8001ABC23 /* Build configuration list for PBXNativeTarget "SwiftMNIST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				614AE3112C171AF8001ABC23 /* Debug */,
+				614AE3122C171AF8001ABC23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		614AE3132C171AF8001ABC23 /* Build configuration list for PBXNativeTarget "SwiftMNISTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				614AE3142C171AF8001ABC23 /* Debug */,
+				614AE3152C171AF8001ABC23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 614AE2E32C171AF7001ABC23 /* Project object */;
+}
