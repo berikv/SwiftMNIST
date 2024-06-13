@@ -46,7 +46,6 @@ Neural Networks to work with text input, but that is out of scope of this projec
 
 Instead we'll be use the MNIST dataset for this project. MNIST is a dataset, specifically made to test
 the performance of Neural Networks. It consists of sets of handwritten letters.
-Each   
     
 ## Log
 
@@ -60,3 +59,9 @@ Each
 
 - Read and present the MNIST dataset on the app
 - Rename project to SwiftMNIST
+- Add an appicon
+
+## 2024-06-13
+
+- Add some vector algebra support for Array (will probably move to simd types soon)
+- Create a BrainEngine that lets a human perform the same training and evaluation as the Neural Network does

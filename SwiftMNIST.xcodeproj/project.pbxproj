@@ -22,12 +22,19 @@
 		616A3C232C19BE9B0083CF7A /* MNISTDataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C222C19BE9B0083CF7A /* MNISTDataset.swift */; };
 		616A3C252C19BED00083CF7A /* MNISTDataset+fromBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C242C19BED00083CF7A /* MNISTDataset+fromBundle.swift */; };
 		616A3C282C19BFBC0083CF7A /* MNISTDatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */; };
+		616A3C2A2C19C2990083CF7A /* BrainEngineTraingingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C292C19C2990083CF7A /* BrainEngineTraingingView.swift */; };
+		616A3C2D2C19DD0E0083CF7A /* BrainEngineValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C2C2C19DD0E0083CF7A /* BrainEngineValidationView.swift */; };
+		616A3C2F2C19DF7D0083CF7A /* BrainEngineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C2E2C19DF7D0083CF7A /* BrainEngineView.swift */; };
+		616A3C312C1A5B4E0083CF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616A3C302C1A5B4E0083CF7A /* Assets.xcassets */; };
+		616A3C342C1B0E910083CF7A /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C332C1B0E910083CF7A /* Power.swift */; };
+		616A3C362C1B1FDC0083CF7A /* ArrayVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C352C1B1FDC0083CF7A /* ArrayVector.swift */; };
+		616A3C382C1B20360083CF7A /* LossFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C372C1B20360083CF7A /* LossFunctions.swift */; };
 		619A870E2C19BABD0052A3D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */; };
-		619A870F2C19BABD0052A3D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 619A87062C19BABD0052A3D8 /* Assets.xcassets */; };
 		619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A87072C19BABD0052A3D8 /* ContentView.swift */; };
 		619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */; };
 		619A87132C19BABD0052A3D8 /* ProjectLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870B2C19BABD0052A3D8 /* ProjectLog.md */; };
 		619A87142C19BABD0052A3D8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870C2C19BABD0052A3D8 /* Readme.md */; };
+		61A01B602C1B2B59000C875E /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B5F2C1B2B59000C875E /* BitmapImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,13 +65,20 @@
 		616A3C222C19BE9B0083CF7A /* MNISTDataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTDataset.swift; sourceTree = "<group>"; };
 		616A3C242C19BED00083CF7A /* MNISTDataset+fromBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MNISTDataset+fromBundle.swift"; sourceTree = "<group>"; };
 		616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNISTDatasetView.swift; sourceTree = "<group>"; };
+		616A3C292C19C2990083CF7A /* BrainEngineTraingingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainEngineTraingingView.swift; sourceTree = "<group>"; };
+		616A3C2C2C19DD0E0083CF7A /* BrainEngineValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainEngineValidationView.swift; sourceTree = "<group>"; };
+		616A3C2E2C19DF7D0083CF7A /* BrainEngineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainEngineView.swift; sourceTree = "<group>"; };
+		616A3C302C1A5B4E0083CF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		616A3C332C1B0E910083CF7A /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		616A3C352C1B1FDC0083CF7A /* ArrayVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayVector.swift; sourceTree = "<group>"; };
+		616A3C372C1B20360083CF7A /* LossFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossFunctions.swift; sourceTree = "<group>"; };
 		619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		619A87062C19BABD0052A3D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		619A87072C19BABD0052A3D8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		619A87092C19BABD0052A3D8 /* SwiftMNIST.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SwiftMNIST.entitlements; sourceTree = "<group>"; };
 		619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMNISTApp.swift; sourceTree = "<group>"; };
 		619A870B2C19BABD0052A3D8 /* ProjectLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = ProjectLog.md; path = ../ProjectLog.md; sourceTree = "<group>"; };
 		619A870C2C19BABD0052A3D8 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../Readme.md; sourceTree = "<group>"; };
+		61A01B5F2C1B2B59000C875E /* BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,15 +187,38 @@
 		616A3C262C19BF410083CF7A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				616A3C2B2C19DCF70083CF7A /* BrainEngine */,
 				619A87072C19BABD0052A3D8 /* ContentView.swift */,
 				616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */,
+				61A01B5F2C1B2B59000C875E /* BitmapImage.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		616A3C2B2C19DCF70083CF7A /* BrainEngine */ = {
+			isa = PBXGroup;
+			children = (
+				616A3C292C19C2990083CF7A /* BrainEngineTraingingView.swift */,
+				616A3C2C2C19DD0E0083CF7A /* BrainEngineValidationView.swift */,
+				616A3C2E2C19DF7D0083CF7A /* BrainEngineView.swift */,
+			);
+			path = BrainEngine;
+			sourceTree = "<group>";
+		};
+		616A3C322C1B0E810083CF7A /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				616A3C332C1B0E910083CF7A /* Power.swift */,
+				616A3C352C1B1FDC0083CF7A /* ArrayVector.swift */,
+				616A3C372C1B20360083CF7A /* LossFunctions.swift */,
+			);
+			path = Math;
 			sourceTree = "<group>";
 		};
 		619A87052C19BABD0052A3D8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				616A3C302C1A5B4E0083CF7A /* Assets.xcassets */,
 				619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -195,9 +232,9 @@
 				616A3C1F2C19BE760083CF7A /* MNISTReader */,
 				616A3C262C19BF410083CF7A /* View */,
 				619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */,
+				616A3C322C1B0E810083CF7A /* Math */,
 				615CC6162C19BC4200FA25FA /* MNIST */,
 				619A87052C19BABD0052A3D8 /* Preview Content */,
-				619A87062C19BABD0052A3D8 /* Assets.xcassets */,
 				619A87092C19BABD0052A3D8 /* SwiftMNIST.entitlements */,
 			);
 			path = SwiftMNIST;
@@ -288,6 +325,7 @@
 				615CC6202C19BC4200FA25FA /* train-labels.idx1-ubyte in Resources */,
 				615CC6192C19BC4200FA25FA /* train-images-idx3-ubyte in Resources */,
 				615CC61C2C19BC4200FA25FA /* MnistDemo.py in Resources */,
+				616A3C312C1A5B4E0083CF7A /* Assets.xcassets in Resources */,
 				619A87132C19BABD0052A3D8 /* ProjectLog.md in Resources */,
 				615CC61B2C19BC4200FA25FA /* MnistDataloader.py in Resources */,
 				615CC6182C19BC4200FA25FA /* t10k-labels-idx1-ubyte in Resources */,
@@ -297,7 +335,6 @@
 				619A870E2C19BABD0052A3D8 /* Preview Assets.xcassets in Resources */,
 				615CC6172C19BC4200FA25FA /* t10k-images-idx3-ubyte in Resources */,
 				615CC61A2C19BC4200FA25FA /* train-labels-idx1-ubyte in Resources */,
-				619A870F2C19BABD0052A3D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,12 +352,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616A3C382C1B20360083CF7A /* LossFunctions.swift in Sources */,
+				616A3C362C1B1FDC0083CF7A /* ArrayVector.swift in Sources */,
 				619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */,
 				616A3C212C19BE880083CF7A /* MNISTSample.swift in Sources */,
 				616A3C232C19BE9B0083CF7A /* MNISTDataset.swift in Sources */,
 				616A3C282C19BFBC0083CF7A /* MNISTDatasetView.swift in Sources */,
+				616A3C2F2C19DF7D0083CF7A /* BrainEngineView.swift in Sources */,
 				616A3C252C19BED00083CF7A /* MNISTDataset+fromBundle.swift in Sources */,
 				619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */,
+				616A3C342C1B0E910083CF7A /* Power.swift in Sources */,
+				616A3C2A2C19C2990083CF7A /* BrainEngineTraingingView.swift in Sources */,
+				61A01B602C1B2B59000C875E /* BitmapImage.swift in Sources */,
+				616A3C2D2C19DD0E0083CF7A /* BrainEngineValidationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
