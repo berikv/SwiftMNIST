@@ -35,6 +35,10 @@
 		619A87132C19BABD0052A3D8 /* ProjectLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870B2C19BABD0052A3D8 /* ProjectLog.md */; };
 		619A87142C19BABD0052A3D8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870C2C19BABD0052A3D8 /* Readme.md */; };
 		61A01B602C1B2B59000C875E /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B5F2C1B2B59000C875E /* BitmapImage.swift */; };
+		61A01B622C1B3A84000C875E /* NeuralNetworkEnigenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B612C1B3A84000C875E /* NeuralNetworkEnigenView.swift */; };
+		61A01B652C1B3C3A000C875E /* NeuralEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B642C1B3C3A000C875E /* NeuralEngine.swift */; };
+		61A01B682C1B7C89000C875E /* NeuralNetworkTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B672C1B7C89000C875E /* NeuralNetworkTrainer.swift */; };
+		61A01B6B2C1B7D52000C875E /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		619A870B2C19BABD0052A3D8 /* ProjectLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = ProjectLog.md; path = ../ProjectLog.md; sourceTree = "<group>"; };
 		619A870C2C19BABD0052A3D8 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../Readme.md; sourceTree = "<group>"; };
 		61A01B5F2C1B2B59000C875E /* BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
+		61A01B612C1B3A84000C875E /* NeuralNetworkEnigenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkEnigenView.swift; sourceTree = "<group>"; };
+		61A01B642C1B3C3A000C875E /* NeuralEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralEngine.swift; sourceTree = "<group>"; };
+		61A01B672C1B7C89000C875E /* NeuralNetworkTrainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkTrainer.swift; sourceTree = "<group>"; };
+		61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,10 +195,12 @@
 		616A3C262C19BF410083CF7A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				61A01B692C1B7D43000C875E /* Util */,
 				616A3C2B2C19DCF70083CF7A /* BrainEngine */,
 				619A87072C19BABD0052A3D8 /* ContentView.swift */,
 				616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */,
 				61A01B5F2C1B2B59000C875E /* BitmapImage.swift */,
+				61A01B612C1B3A84000C875E /* NeuralNetworkEnigenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,15 +239,41 @@
 			children = (
 				619A870C2C19BABD0052A3D8 /* Readme.md */,
 				619A870B2C19BABD0052A3D8 /* ProjectLog.md */,
+				619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */,
 				616A3C1F2C19BE760083CF7A /* MNISTReader */,
 				616A3C262C19BF410083CF7A /* View */,
-				619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */,
+				61A01B662C1B7C64000C875E /* Model */,
+				61A01B632C1B3AA8000C875E /* Engine */,
 				616A3C322C1B0E810083CF7A /* Math */,
 				615CC6162C19BC4200FA25FA /* MNIST */,
 				619A87052C19BABD0052A3D8 /* Preview Content */,
 				619A87092C19BABD0052A3D8 /* SwiftMNIST.entitlements */,
 			);
 			path = SwiftMNIST;
+			sourceTree = "<group>";
+		};
+		61A01B632C1B3AA8000C875E /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				61A01B642C1B3C3A000C875E /* NeuralEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		61A01B662C1B7C64000C875E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				61A01B672C1B7C89000C875E /* NeuralNetworkTrainer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		61A01B692C1B7D43000C875E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,7 +388,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A01B622C1B3A84000C875E /* NeuralNetworkEnigenView.swift in Sources */,
 				616A3C382C1B20360083CF7A /* LossFunctions.swift in Sources */,
+				61A01B6B2C1B7D52000C875E /* StringInterpolation.swift in Sources */,
 				616A3C362C1B1FDC0083CF7A /* ArrayVector.swift in Sources */,
 				619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */,
 				616A3C212C19BE880083CF7A /* MNISTSample.swift in Sources */,
@@ -362,6 +400,8 @@
 				616A3C252C19BED00083CF7A /* MNISTDataset+fromBundle.swift in Sources */,
 				619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */,
 				616A3C342C1B0E910083CF7A /* Power.swift in Sources */,
+				61A01B682C1B7C89000C875E /* NeuralNetworkTrainer.swift in Sources */,
+				61A01B652C1B3C3A000C875E /* NeuralEngine.swift in Sources */,
 				616A3C2A2C19C2990083CF7A /* BrainEngineTraingingView.swift in Sources */,
 				61A01B602C1B2B59000C875E /* BitmapImage.swift in Sources */,
 				616A3C2D2C19DD0E0083CF7A /* BrainEngineValidationView.swift in Sources */,

@@ -65,3 +65,4 @@ the performance of Neural Networks. It consists of sets of handwritten letters.
 
 - Add some vector algebra support for Array (will probably move to simd types soon)
 - Create a BrainEngine that lets a human perform the same training and evaluation as the Neural Network does
+- Add UI for the Neural Network Training, with a dummy implementation

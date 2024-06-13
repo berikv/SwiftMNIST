@@ -14,6 +14,7 @@ extension Array where Element: AdditiveArithmetic {
 }
 
 extension Array where Element: AdditiveArithmetic {
+    @inline(__always)
     var sum: Element {
         reduce(.zero) { $0 + $1 }
     }
@@ -40,6 +41,7 @@ extension Array where Element: BinaryFloatingPoint {
 }
 
 extension Array where Element: BinaryFloatingPoint {
+    @inline(__always)
     var mean: Element {
         guard !isEmpty else { return .zero }
         return sum / Element(count)

@@ -3,7 +3,7 @@ import SwiftUI
 import CoreGraphics
 
 struct ContentView: View {
-    @State private var selected = 0
+    @State private var selected = 3
     @State private var training = MNISTDataset.training
     @State private var validation = MNISTDataset.validation
 
@@ -24,6 +24,11 @@ struct ContentView: View {
                     BrainEngineView()
                         .padding()
                 }.tag(2)
+
+                NavigationLink("NN Engine") {
+                    NeuralNetworkEnigenView()
+                        .padding()
+                }.tag(3)
             }.padding()
         }
     }
