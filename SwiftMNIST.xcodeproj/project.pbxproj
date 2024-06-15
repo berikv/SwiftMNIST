@@ -39,6 +39,10 @@
 		61A01B652C1B3C3A000C875E /* NeuralEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B642C1B3C3A000C875E /* NeuralEngine.swift */; };
 		61A01B682C1B7C89000C875E /* NeuralNetworkTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B672C1B7C89000C875E /* NeuralNetworkTrainer.swift */; };
 		61A01B6B2C1B7D52000C875E /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */; };
+		61A01B6D2C1DC062000C875E /* BitmapInputLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6C2C1DC062000C875E /* BitmapInputLayer.swift */; };
+		61A01B6F2C1DC084000C875E /* DecimalOutputLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6E2C1DC084000C875E /* DecimalOutputLayer.swift */; };
+		61A01B712C1DC0B7000C875E /* SIMDUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B702C1DC0B7000C875E /* SIMDUtil.swift */; };
+		61A01B732C1DC0D3000C875E /* LayerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B722C1DC0D3000C875E /* LayerTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		61A01B642C1B3C3A000C875E /* NeuralEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralEngine.swift; sourceTree = "<group>"; };
 		61A01B672C1B7C89000C875E /* NeuralNetworkTrainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkTrainer.swift; sourceTree = "<group>"; };
 		61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
+		61A01B6C2C1DC062000C875E /* BitmapInputLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapInputLayer.swift; sourceTree = "<group>"; };
+		61A01B6E2C1DC084000C875E /* DecimalOutputLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalOutputLayer.swift; sourceTree = "<group>"; };
+		61A01B702C1DC0B7000C875E /* SIMDUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIMDUtil.swift; sourceTree = "<group>"; };
+		61A01B722C1DC0D3000C875E /* LayerTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				61A01B642C1B3C3A000C875E /* NeuralEngine.swift */,
+				61A01B6C2C1DC062000C875E /* BitmapInputLayer.swift */,
+				61A01B6E2C1DC084000C875E /* DecimalOutputLayer.swift */,
+				61A01B702C1DC0B7000C875E /* SIMDUtil.swift */,
+				61A01B722C1DC0D3000C875E /* LayerTypes.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -398,9 +410,13 @@
 				616A3C282C19BFBC0083CF7A /* MNISTDatasetView.swift in Sources */,
 				616A3C2F2C19DF7D0083CF7A /* BrainEngineView.swift in Sources */,
 				616A3C252C19BED00083CF7A /* MNISTDataset+fromBundle.swift in Sources */,
+				61A01B6F2C1DC084000C875E /* DecimalOutputLayer.swift in Sources */,
 				619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */,
+				61A01B712C1DC0B7000C875E /* SIMDUtil.swift in Sources */,
+				61A01B732C1DC0D3000C875E /* LayerTypes.swift in Sources */,
 				616A3C342C1B0E910083CF7A /* Power.swift in Sources */,
 				61A01B682C1B7C89000C875E /* NeuralNetworkTrainer.swift in Sources */,
+				61A01B6D2C1DC062000C875E /* BitmapInputLayer.swift in Sources */,
 				61A01B652C1B3C3A000C875E /* NeuralEngine.swift in Sources */,
 				616A3C2A2C19C2990083CF7A /* BrainEngineTraingingView.swift in Sources */,
 				61A01B602C1B2B59000C875E /* BitmapImage.swift in Sources */,
