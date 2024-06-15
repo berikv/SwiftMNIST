@@ -6,11 +6,11 @@ struct MNISTSample: Hashable {
 }
 
 extension MNISTSample {
-    var target: [Double] {
+    var target: [Float] {
         precondition(label < 10)
-        let prefix = Array(repeating: 0.0, count: Int(label))
-        let value = [1.0]
-        let postfix = Array(repeating: 0.0, count: Int(9 - label))
+        let prefix = Array(repeating: Float.zero, count: Int(label))
+        let value = [Float(1.0)]
+        let postfix = Array(repeating: Float.zero, count: Int(9 - label))
         return prefix + value + postfix
     }
 }

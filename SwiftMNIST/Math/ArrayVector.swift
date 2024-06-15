@@ -5,11 +5,19 @@ infix operator .-
 
 extension Array where Element: AdditiveArithmetic {
     static func .+(lhs: Self, rhs: Self) -> Self {
-        zip(lhs, rhs).map { a, b in a + b }
+        zip(lhs, rhs).map { $0 + $1 }
+    }
+
+    static func .+(lhs: Self, rhs: Element) -> Self {
+        lhs.map { $0 + rhs }
     }
 
     static func .-(lhs: Self, rhs: Self) -> Self {
-        zip(lhs, rhs).map { a, b in a - b }
+        zip(lhs, rhs).map { $0 - $1 }
+    }
+
+    static func .-(lhs: Self, rhs: Element) -> Self {
+        lhs.map { $0 - rhs }
     }
 }
 
@@ -47,15 +55,28 @@ extension Array where Element: BinaryFloatingPoint {
         return sum / Element(count)
     }
 
+    var squared: Self {
+        map { $0 * $0 }
+    }
+
     var normalized: Self {
-        let sum = reduce(0) { $0 + $1 }
-        guard sum > 0 else {
+        let length = sqrt(reduce(0) { $0 + $1 * $1 })
+        guard length > 0 else {
             return Array(
                 repeating: 1 / Element(count),
                 count: count
             )
         }
-        return map { n in n / sum }
+        return map { n in n / length }
+
+//        let sum = reduce(0) { $0 + $1 }
+//        guard sum > 0 else {
+//            return Array(
+//                repeating: 1 / Element(count),
+//                count: count
+//            )
+//        }
+//        return map { n in n / sum }
     }
 
     var variance: Element {

@@ -66,3 +66,16 @@ the performance of Neural Networks. It consists of sets of handwritten letters.
 - Add some vector algebra support for Array (will probably move to simd types soon)
 - Create a BrainEngine that lets a human perform the same training and evaluation as the Neural Network does
 - Add UI for the Neural Network Training, with a dummy implementation
+
+## 2024-06-14
+
+- Implement a Neural Network with only one layer, the output layer
+- Implement both a forward and a backward "training" pass
+- Train the network to 0.017 MSE!
+
+## 2024-06-15
+
+- Test the network using the test set
+- Add a graph to show both the training and validation MSE
+- Randomise the training input order
+- Got the network to be 90% correct when trained for multiple epochs

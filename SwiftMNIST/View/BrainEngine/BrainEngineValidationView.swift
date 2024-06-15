@@ -6,8 +6,8 @@ struct BrainEngineValidationView: View {
     var sample: MNISTSample { dataset[index] }
 
     @State private var index = 0
-    @State private var errors = [Double]()
-    @State private var prediction: [Double] = Array(repeating: 0, count: 10)
+    @State private var errors = [Float]()
+    @State private var prediction: [Float] = Array(repeating: 0, count: 10)
 
     var body: some View {
         VStack {

@@ -26,7 +26,7 @@ struct ContentView: View {
                 }.tag(2)
 
                 NavigationLink("NN Engine") {
-                    NeuralNetworkEnigenView()
+                    NeuralNetworkEngineView()
                         .padding()
                 }.tag(3)
             }.padding()

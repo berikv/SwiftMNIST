@@ -35,7 +35,7 @@
 		619A87132C19BABD0052A3D8 /* ProjectLog.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870B2C19BABD0052A3D8 /* ProjectLog.md */; };
 		619A87142C19BABD0052A3D8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 619A870C2C19BABD0052A3D8 /* Readme.md */; };
 		61A01B602C1B2B59000C875E /* BitmapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B5F2C1B2B59000C875E /* BitmapImage.swift */; };
-		61A01B622C1B3A84000C875E /* NeuralNetworkEnigenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B612C1B3A84000C875E /* NeuralNetworkEnigenView.swift */; };
+		61A01B622C1B3A84000C875E /* NeuralNetworkEngineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B612C1B3A84000C875E /* NeuralNetworkEngineView.swift */; };
 		61A01B652C1B3C3A000C875E /* NeuralEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B642C1B3C3A000C875E /* NeuralEngine.swift */; };
 		61A01B682C1B7C89000C875E /* NeuralNetworkTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B672C1B7C89000C875E /* NeuralNetworkTrainer.swift */; };
 		61A01B6B2C1B7D52000C875E /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */; };
@@ -83,7 +83,7 @@
 		619A870B2C19BABD0052A3D8 /* ProjectLog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = ProjectLog.md; path = ../ProjectLog.md; sourceTree = "<group>"; };
 		619A870C2C19BABD0052A3D8 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../Readme.md; sourceTree = "<group>"; };
 		61A01B5F2C1B2B59000C875E /* BitmapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapImage.swift; sourceTree = "<group>"; };
-		61A01B612C1B3A84000C875E /* NeuralNetworkEnigenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkEnigenView.swift; sourceTree = "<group>"; };
+		61A01B612C1B3A84000C875E /* NeuralNetworkEngineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkEngineView.swift; sourceTree = "<group>"; };
 		61A01B642C1B3C3A000C875E /* NeuralEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralEngine.swift; sourceTree = "<group>"; };
 		61A01B672C1B7C89000C875E /* NeuralNetworkTrainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkTrainer.swift; sourceTree = "<group>"; };
 		61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 				619A87072C19BABD0052A3D8 /* ContentView.swift */,
 				616A3C272C19BFBC0083CF7A /* MNISTDatasetView.swift */,
 				61A01B5F2C1B2B59000C875E /* BitmapImage.swift */,
-				61A01B612C1B3A84000C875E /* NeuralNetworkEnigenView.swift */,
+				61A01B612C1B3A84000C875E /* NeuralNetworkEngineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61A01B622C1B3A84000C875E /* NeuralNetworkEnigenView.swift in Sources */,
+				61A01B622C1B3A84000C875E /* NeuralNetworkEngineView.swift in Sources */,
 				616A3C382C1B20360083CF7A /* LossFunctions.swift in Sources */,
 				61A01B6B2C1B7D52000C875E /* StringInterpolation.swift in Sources */,
 				616A3C362C1B1FDC0083CF7A /* ArrayVector.swift in Sources */,

@@ -3,59 +3,102 @@ import Foundation
 @Observable
 @MainActor
 final class NeuralNetworkTrainer {
-    let batchSize = 100
-
-    private(set) var isTrainging = false
     private(set) var startDate: Date?
     private(set) var stopDate: Date?
-    private(set) var error = [Double]()
-    private(set) var task: Task<(), any Error>?
+    private(set) var trainingMSE = [Float]()
+    private(set) var validationResults = [ValidationResult]()
+    private var trainTask: Task<(), any Error>?
+    private var validateTask: Task<(), any Error>?
 
-    func start() {
+    var isTraining: Bool { trainTask != nil }
+    var isValidating: Bool { validateTask != nil }
 
+    private let batchSize = 500
+    private var engine = NeuralEngine()
+
+    func train() {
+        guard trainTask == nil else { return }
+        
         stopDate = nil
         startDate = Date()
-        error.removeAll(keepingCapacity: true)
-        isTrainging = true
+        trainingMSE.removeAll(keepingCapacity: true)
 
-        task = Task.detached { [unowned self] in
-            let engine = NeuralEngine()
-            var errors = [Double]()
-            var batch = [Double]()
+        trainTask = Task.detached { [unowned self] in
+            var engine = await self.engine
+            var errors = [Float]()
+            var batch = [Float]()
             batch.reserveCapacity(batchSize)
 
-            for (index, sample) in MNISTDataset.training.enumerated() {
-                let prediction = engine.evalute(sample)
+            for (index, sample) in MNISTDataset.training.shuffled().enumerated() {
+                let prediction = engine.train(sample)
                 let error = meanSquaredError(prediction: prediction, target: sample.target)
                 
                 errors.append(error)
                 batch.append(errors.mean)
 
                 if index.isMultiple(of: batchSize) {
-                    Task { @MainActor [batch] in updateError(batch: batch) }
+                    await updateTraining(engine: engine, errorBatch: batch)
                     batch.removeAll(keepingCapacity: true)
                     try Task.checkCancellation()
                 }
             }
 
-            Task { @MainActor [batch] in updateError(batch: batch) }
-            await finishTask()
+            await updateTraining(engine: engine, errorBatch: batch)
+            await finalizeTraining()
         }
     }
 
     func stop() {
-        guard isTrainging else { return }
-        task?.cancel()
-        finishTask()
+        guard let trainTask else { return }
+        trainTask.cancel()
+        finalizeTraining()
     }
 
-    private func updateError(batch: [Double]) {
-        error.append(contentsOf: batch)
+    struct ValidationResult {
+        let sample: MNISTSample
+        let prediction: [Float]
+        let meanSquaredError: Float
+        var isCorrect: Bool {
+            let mostLikelyPredicted = prediction.firstIndex(of: prediction.max()!)
+            return mostLikelyPredicted == Int(sample.label)
+        }
     }
 
-    private func finishTask() {
+    func validate() {
+        validateTask = Task.detached { [unowned self] in
+            let engine = await self.engine
+            var results = [ValidationResult]()
+            for (index, sample) in MNISTDataset.validation.enumerated() {
+                let prediction = engine.evaluate(sample)
+                let mse = meanSquaredError(prediction: prediction, target: sample.target)
+
+                results.append(ValidationResult(
+                    sample: sample,
+                    prediction: prediction,
+                    meanSquaredError: mse))
+            }
+
+            Task { @MainActor [results] in
+                validationResults = results
+                validateTask = nil
+            }
+        }
+    }
+
+    func reset() {
+        trainTask?.cancel()
+        validateTask?.cancel()
+
+        engine = NeuralEngine()
+    }
+
+    private func updateTraining(engine: NeuralEngine, errorBatch: [Float]) {
+        self.engine = engine
+        trainingMSE.append(contentsOf: errorBatch)
+    }
+
+    private func finalizeTraining() {
         stopDate = Date()
-        task = nil
-        isTrainging = false
+        trainTask = nil
     }
 }
