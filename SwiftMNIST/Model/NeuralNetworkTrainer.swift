@@ -100,5 +100,7 @@ final class NeuralNetworkTrainer {
     private func finalizeTraining() {
         stopDate = Date()
         trainTask = nil
+
+        validate()
     }
 }

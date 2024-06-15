@@ -33,11 +33,6 @@ struct NeuralNetworkEngineView: View {
                 Button("Train") {
                     trainer.train()
                 }.disabled(trainer.isTraining)
-                    .onChange(of: trainer.isTraining) { wasTraining, isTraining in
-                        if wasTraining && !isTraining {
-                            trainer.validate()
-                        }
-                    }
 
                 Button("Validate") {
                     trainer.validate()
