@@ -79,3 +79,23 @@ the performance of Neural Networks. It consists of sets of handwritten letters.
 - Add a graph to show both the training and validation MSE
 - Randomise the training input order
 - Got the network to be 90% correct when trained for multiple epochs
+
+## 2024-06-19
+
+- A failed attempt to use SIMD for speeding up without measuring things
+  I'll probably at some point move to a better Math library, but for now
+  I'd like to learn and do things "manually". SIMD is just the right amount
+  of speed while keeping math operations very hands on. The speedup failed
+  because the data needs to be SIMD vector sized. Doing that in the vector
+  results in allocations that unfortunately weren't optimised away. In a
+  next attempt I'll make sure to have performance measurements set up and
+  use Instruments.app to find slow code.
+- Add a Hidden layer
+
+## 2024-06-21
+
+- Get the Hidden layer to train and reach 87% correct, lower than only the output
+  layer, but there is room for improvement
+- Add minimum support for EPOCHs
+- Add performance tests
+- Attempt to reduce error by clipping weights and gradients, mostly failed

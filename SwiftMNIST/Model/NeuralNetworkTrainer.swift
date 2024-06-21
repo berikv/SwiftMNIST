@@ -1,50 +1,82 @@
 import Foundation
 
+struct TrainingBatchResult: Identifiable {
+    var id: Int { numberOfSamples }
+    let numberOfSamples: Int
+    let meanSquaredError: Float
+}
+
+struct ValidationResult: Identifiable {
+    var id: Int { numberOfSamples }
+    let epoch: Int
+    let numberOfSamplesTrained: Int
+    let numberOfSamples: Int
+    let meanSquaredError: Float
+    let correctCount: Int
+    let errors: [MNISTSample]
+    var correctPct: Double { Double(correctCount) / Double(numberOfSamples) }
+}
+
 @Observable
 @MainActor
 final class NeuralNetworkTrainer {
     private(set) var startDate: Date?
     private(set) var stopDate: Date?
-    private(set) var trainingMSE = [Float]()
+    private(set) var trainingSampleCount = 0
+    private(set) var trainingBatchResults = [TrainingBatchResult]()
     private(set) var validationResults = [ValidationResult]()
+    private(set) var trainingRate: Double = 0
+
+    var epoch: Int { engine.epoch }
+    var learningRate: Float { engine.learningRate }
+
     private var trainTask: Task<(), any Error>?
     private var validateTask: Task<(), any Error>?
 
     var isTraining: Bool { trainTask != nil }
     var isValidating: Bool { validateTask != nil }
 
-    private let batchSize = 500
     private var engine = NeuralEngine()
 
-    func train() {
+    func train(epochs: Int) {
         guard trainTask == nil else { return }
         
+        if engine.epoch == epochs {
+            return
+        }
+
+        let trainingSet = MNISTDataset.training.shuffled()
         stopDate = nil
         startDate = Date()
-        trainingMSE.removeAll(keepingCapacity: true)
 
-        trainTask = Task.detached { [unowned self] in
-            var engine = await self.engine
-            var errors = [Float]()
+        trainTask = Task.detached { [weak self, epochs] in
+            var engine = await self!.engine
+            var lastUpdate = Date()
             var batch = [Float]()
-            batch.reserveCapacity(batchSize)
 
-            for (index, sample) in MNISTDataset.training.shuffled().enumerated() {
+            for sample in trainingSet {
                 let prediction = engine.train(sample)
                 let error = meanSquaredError(prediction: prediction, target: sample.target)
+                batch.append(error)
                 
-                errors.append(error)
-                batch.append(errors.mean)
-
-                if index.isMultiple(of: batchSize) {
-                    await updateTraining(engine: engine, errorBatch: batch)
-                    batch.removeAll(keepingCapacity: true)
+                let timePassed = Date().timeIntervalSince(lastUpdate)
+                if timePassed > 1/10 {
                     try Task.checkCancellation()
+                    Task { @MainActor [self, engine, batch] in
+                        self?.trainingRate = Double(batch.count) / timePassed
+                        self?.updateTraining(engine: engine, errorBatch: batch)
+                    }
+                    lastUpdate = Date()
+                    batch.removeAll(keepingCapacity: true)
                 }
             }
 
-            await updateTraining(engine: engine, errorBatch: batch)
-            await finalizeTraining()
+            engine.epoch += 1
+            
+            await self?.updateTraining(engine: engine, errorBatch: batch)
+            await self?.finalizeTraining()
+
+            Task.detached { [self, epochs] in await self?.train(epochs: epochs) }
         }
     }
 
@@ -54,47 +86,63 @@ final class NeuralNetworkTrainer {
         finalizeTraining()
     }
 
-    struct ValidationResult {
-        let sample: MNISTSample
-        let prediction: [Float]
-        let meanSquaredError: Float
-        var isCorrect: Bool {
-            let mostLikelyPredicted = prediction.firstIndex(of: prediction.max()!)
-            return mostLikelyPredicted == Int(sample.label)
-        }
-    }
-
     func validate() {
-        validateTask = Task.detached { [unowned self] in
-            let engine = await self.engine
-            var results = [ValidationResult]()
-            for (index, sample) in MNISTDataset.validation.enumerated() {
+        let engine = self.engine
+        let numberOfSamplesTrained = self.trainingSampleCount
+
+        validateTask = Task.detached { [weak self, engine, numberOfSamplesTrained] in
+            var meanSquaredErrors = [Float]()
+            var errors = [MNISTSample]()
+            var correctCount = 0
+
+            for sample in MNISTDataset.validation {
                 let prediction = engine.evaluate(sample)
                 let mse = meanSquaredError(prediction: prediction, target: sample.target)
-
-                results.append(ValidationResult(
-                    sample: sample,
-                    prediction: prediction,
-                    meanSquaredError: mse))
+                meanSquaredErrors.append(mse)
+                if prediction.firstIndex(of: prediction.max()!) == Int(sample.label) {
+                    correctCount += 1
+                } else {
+                    errors.append(sample)
+                }
             }
 
-            Task { @MainActor [results] in
-                validationResults = results
-                validateTask = nil
+            Task { @MainActor [self, meanSquaredErrors, correctCount, errors] in
+                let result = ValidationResult(
+                    epoch: engine.epoch,
+                    numberOfSamplesTrained: numberOfSamplesTrained,
+                    numberOfSamples: meanSquaredErrors.count,
+                    meanSquaredError: meanSquaredErrors.mean(), 
+                    correctCount: correctCount,
+                    errors: errors)
+                self?.validationResults.append(result)
+                self?.validateTask = nil
             }
         }
     }
 
     func reset() {
         trainTask?.cancel()
+        trainTask = nil
+
         validateTask?.cancel()
+        validateTask = nil
+
+        startDate = nil
+        stopDate = nil
+
+        trainingSampleCount = 0
+        trainingBatchResults.removeAll(keepingCapacity: true)
+        validationResults.removeAll(keepingCapacity: true)
 
         engine = NeuralEngine()
     }
 
     private func updateTraining(engine: NeuralEngine, errorBatch: [Float]) {
         self.engine = engine
-        trainingMSE.append(contentsOf: errorBatch)
+        trainingSampleCount += errorBatch.count
+        trainingBatchResults.append(TrainingBatchResult(
+            numberOfSamples: trainingSampleCount,
+            meanSquaredError: errorBatch.mean()))
     }
 
     private func finalizeTraining() {

@@ -50,7 +50,7 @@ struct BrainEngineValidationView: View {
 
             Rectangle().frame(height: 1)
             HStack {
-                Text("Total accured error \(errors.mean)")
+                Text("Total accured error \(errors.mean())")
                 Button("Next") {
                     let error = meanSquaredError(
                         prediction: prediction.normalized,

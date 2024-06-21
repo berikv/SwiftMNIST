@@ -41,8 +41,10 @@
 		61A01B6B2C1B7D52000C875E /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */; };
 		61A01B6D2C1DC062000C875E /* BitmapInputLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6C2C1DC062000C875E /* BitmapInputLayer.swift */; };
 		61A01B6F2C1DC084000C875E /* DecimalOutputLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B6E2C1DC084000C875E /* DecimalOutputLayer.swift */; };
-		61A01B712C1DC0B7000C875E /* SIMDUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B702C1DC0B7000C875E /* SIMDUtil.swift */; };
 		61A01B732C1DC0D3000C875E /* LayerTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B722C1DC0D3000C875E /* LayerTypes.swift */; };
+		61A01B752C1DD5E6000C875E /* HiddenLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B742C1DD5E6000C875E /* HiddenLayer.swift */; };
+		61A01B772C22FBC2000C875E /* Vector.swift_ in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B762C22FBC2000C875E /* Vector.swift_ */; };
+		61A01B7E2C230FFE000C875E /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A01B7D2C230FFE000C875E /* PerformanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +95,10 @@
 		61A01B6A2C1B7D52000C875E /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
 		61A01B6C2C1DC062000C875E /* BitmapInputLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapInputLayer.swift; sourceTree = "<group>"; };
 		61A01B6E2C1DC084000C875E /* DecimalOutputLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalOutputLayer.swift; sourceTree = "<group>"; };
-		61A01B702C1DC0B7000C875E /* SIMDUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIMDUtil.swift; sourceTree = "<group>"; };
 		61A01B722C1DC0D3000C875E /* LayerTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerTypes.swift; sourceTree = "<group>"; };
+		61A01B742C1DD5E6000C875E /* HiddenLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLayer.swift; sourceTree = "<group>"; };
+		61A01B762C22FBC2000C875E /* Vector.swift_ */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vector.swift_; sourceTree = "<group>"; };
+		61A01B7D2C230FFE000C875E /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +119,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61217EFE2C24687800DF28AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		614AE2E22C171AF7001ABC23 = {
 			isa = PBXGroup;
 			children = (
 				619A870D2C19BABD0052A3D8 /* SwiftMNIST */,
 				614AE2FF2C171AF8001ABC23 /* SwiftMNISTTests */,
 				614AE2EC2C171AF7001ABC23 /* Products */,
+				61217EFE2C24687800DF28AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				614AE3002C171AF8001ABC23 /* SwiftMNISTTests.swift */,
+				61A01B7D2C230FFE000C875E /* PerformanceTests.swift */,
 			);
 			path = SwiftMNISTTests;
 			sourceTree = "<group>";
@@ -229,6 +242,7 @@
 				616A3C332C1B0E910083CF7A /* Power.swift */,
 				616A3C352C1B1FDC0083CF7A /* ArrayVector.swift */,
 				616A3C372C1B20360083CF7A /* LossFunctions.swift */,
+				61A01B762C22FBC2000C875E /* Vector.swift_ */,
 			);
 			path = Math;
 			sourceTree = "<group>";
@@ -266,8 +280,8 @@
 				61A01B642C1B3C3A000C875E /* NeuralEngine.swift */,
 				61A01B6C2C1DC062000C875E /* BitmapInputLayer.swift */,
 				61A01B6E2C1DC084000C875E /* DecimalOutputLayer.swift */,
-				61A01B702C1DC0B7000C875E /* SIMDUtil.swift */,
 				61A01B722C1DC0D3000C875E /* LayerTypes.swift */,
+				61A01B742C1DD5E6000C875E /* HiddenLayer.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -304,6 +318,8 @@
 			dependencies = (
 			);
 			name = SwiftMNIST;
+			packageProductDependencies = (
+			);
 			productName = NeuralNet;
 			productReference = 614AE2EB2C171AF7001ABC23 /* SwiftMNIST.app */;
 			productType = "com.apple.product-type.application";
@@ -354,6 +370,8 @@
 				Base,
 			);
 			mainGroup = 614AE2E22C171AF7001ABC23;
+			packageReferences = (
+			);
 			productRefGroup = 614AE2EC2C171AF7001ABC23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -403,6 +421,7 @@
 				61A01B622C1B3A84000C875E /* NeuralNetworkEngineView.swift in Sources */,
 				616A3C382C1B20360083CF7A /* LossFunctions.swift in Sources */,
 				61A01B6B2C1B7D52000C875E /* StringInterpolation.swift in Sources */,
+				61A01B752C1DD5E6000C875E /* HiddenLayer.swift in Sources */,
 				616A3C362C1B1FDC0083CF7A /* ArrayVector.swift in Sources */,
 				619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */,
 				616A3C212C19BE880083CF7A /* MNISTSample.swift in Sources */,
@@ -411,8 +430,8 @@
 				616A3C2F2C19DF7D0083CF7A /* BrainEngineView.swift in Sources */,
 				616A3C252C19BED00083CF7A /* MNISTDataset+fromBundle.swift in Sources */,
 				61A01B6F2C1DC084000C875E /* DecimalOutputLayer.swift in Sources */,
+				61A01B772C22FBC2000C875E /* Vector.swift_ in Sources */,
 				619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */,
-				61A01B712C1DC0B7000C875E /* SIMDUtil.swift in Sources */,
 				61A01B732C1DC0D3000C875E /* LayerTypes.swift in Sources */,
 				616A3C342C1B0E910083CF7A /* Power.swift in Sources */,
 				61A01B682C1B7C89000C875E /* NeuralNetworkTrainer.swift in Sources */,
@@ -429,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				614AE3012C171AF8001ABC23 /* SwiftMNISTTests.swift in Sources */,
+				61A01B7E2C230FFE000C875E /* PerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +566,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = "-Ounchecked";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -653,6 +674,108 @@
 			};
 			name = Release;
 		};
+		61A01B7A2C230C16000C875E /* Test_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Test_Release;
+		};
+		61A01B7B2C230C16000C875E /* Test_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftMNIST/SwiftMNIST.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftMNIST/Preview Content\"";
+				DEVELOPMENT_TEAM = B56488KY8L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nu.visschers.SwiftMNIST;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Test_Release;
+		};
+		61A01B7C2C230C16000C875E /* Test_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B56488KY8L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nu.visschers.NeuralNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftMNIST.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftMNIST";
+			};
+			name = Test_Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -661,6 +784,7 @@
 			buildConfigurations = (
 				614AE30E2C171AF8001ABC23 /* Debug */,
 				614AE30F2C171AF8001ABC23 /* Release */,
+				61A01B7A2C230C16000C875E /* Test_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -670,6 +794,7 @@
 			buildConfigurations = (
 				614AE3112C171AF8001ABC23 /* Debug */,
 				614AE3122C171AF8001ABC23 /* Release */,
+				61A01B7B2C230C16000C875E /* Test_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -679,6 +804,7 @@
 			buildConfigurations = (
 				614AE3142C171AF8001ABC23 /* Debug */,
 				614AE3152C171AF8001ABC23 /* Release */,
+				61A01B7C2C230C16000C875E /* Test_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

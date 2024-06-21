@@ -1,0 +1,58 @@
+import Foundation
+import simd
+
+let simdBitwidth = 128
+
+struct Vector<Element> {
+
+    init(_ array: Array<Element>) where Element == Float {
+        var data = array.withUnsafeBytes { pointer in
+            Data(bytes: pointer.baseAddress!, count: array.count * MemoryLayout<Element>.size)
+        }
+        let (_, r) = data.count.quotientAndRemainder(dividingBy: simdBitwidth)
+        data.append(Data(repeating: 0, count: r))
+
+        self.count = array.count
+        self.data = data
+    }
+
+    let count: Int
+    let data: Data
+
+    func sum() -> Float {
+        typealias SIMD = SIMD16<Float>
+        var result = data.withUnsafeBytes { (pointer: UnsafeRawBufferPointer) in
+            [Float](pointer.bindMemory(to: Float.self))
+        }
+        while result.count > SIMD.scalarCount {
+            result = result.withUnsafeBytes { (pointer: UnsafeRawBufferPointer) in
+                let elementCount = result.count
+                var index = 0
+                var batch = [Float]()
+                batch.reserveCapacity(result.count / SIMD.scalarCount)
+
+                while index + SIMD.scalarCount < elementCount {
+                    let byteOffset = index * MemoryLayout<Float>.size
+                    let casted = pointer.load(fromByteOffset: byteOffset, as: SIMD.self)
+                    batch.append(simd_reduce_add(casted))
+                    index += SIMD.scalarCount
+                }
+
+                return batch + result[index...]
+            }
+        }
+
+        if result.count == 1 {
+            return result[0]
+        }
+
+        var last = SIMD(repeating: 0)
+        for (index, item) in result.enumerated() {
+            last[index] = item
+        }
+
+        return simd_reduce_add(last)
+    }
+}
+
+

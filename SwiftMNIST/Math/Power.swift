@@ -6,6 +6,7 @@ precedencegroup ExponentiativePrecedence {
 }
 
 infix operator ** : ExponentiativePrecedence
+infix operator **= : AssignmentPrecedence
 
 /// Exponent operator.
 public func ** <N: BinaryInteger>(base: N, power: N) -> N {
@@ -17,7 +18,6 @@ public func ** <N: BinaryFloatingPoint>(base: N, power: N) -> N {
     return N.self(pow(Double(base), Double(power)))
 }
 
-infix operator **= : AssignmentPrecedence
 
 public func **= <N: BinaryInteger>(lhs: inout N, rhs: N) {
     lhs = lhs ** rhs

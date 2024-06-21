@@ -1,9 +1,9 @@
 import Foundation
 
 struct BitmapInputLayer: InputLayerType {
-    typealias SIMD = SIMD16<Float>
-
-    func forward(input: Data) -> [SIMD] {
-        [SIMD](packing: input.map { Float($0) / Float(UInt8.max) })
+    func forward(input: Data) -> [Float] {
+        precondition(input.count == 28*28)
+//        return input.map { Float($0) / (Float(UInt8.max) / 2) - 1 }
+        return input.map { Float($0) / Float(UInt8.max) }
     }
 }
