@@ -18,13 +18,16 @@ struct HiddenLayer: LayerType {
     private(set) var weights: [[Float]]
     private(set) var bias: [Float]
 
-    private let inputSize = 28*28
-    private let outputSize = 64
+    private let inputSize: Int// = 28*28
+    private let outputSize: Int// = hiddenLayerSize
 
     private var inputIndices: Range<Int> { (0..<inputSize) }
     private var outputIndices: Range<Int> { (0..<outputSize) }
 
-    init() {
+    init(inputSize: Int, outputSize: Int) {
+        self.inputSize = inputSize
+        self.outputSize = outputSize
+
 //        func random() -> Float { Float.random(in: -0.01 ... 0.01) }
         func heRandom(size: Int) -> Float {
             let stddev = (2 / Float(size)).squareRoot()
@@ -65,12 +68,13 @@ struct HiddenLayer: LayerType {
     }
 
     func computeGradients(input: Input, gradient: Gradient) -> (weightGradients: Weights, biasGradients: Bias) {
-
         var weightGradients = [[Float]](repeating: [Float](repeating: 0.0, count: inputSize), count: outputSize)
         let biasGradients = gradient
 
         for i in 0..<weightGradients.count {
-            weightGradients[i] = (input .* gradient[i])//.clip(min: -10, max: 10)
+            let gradients = input .* gradient[i]
+            let clipped = gradients//.clip(distanceFromZero: 1)
+            weightGradients[i] = clipped
         }
 
         return (weightGradients, biasGradients)

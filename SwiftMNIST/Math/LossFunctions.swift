@@ -22,6 +22,12 @@ func crossEntropyLoss(prediction: [Float], target: [Float]) -> Float {
 extension Array where Element: BinaryFloatingPoint {
     @inline(__always)
     func clip<T: BinaryFloatingPoint>(min: T, max: T) -> Self {
-        map { Element(Swift.max(max, Swift.min(min, T($0)))) }
+        map { Element(Swift.min(max, Swift.max(min, T($0)))) }
     }
+
+    @inline(__always)
+    func clip<T: BinaryFloatingPoint>(distanceFromZero: T) -> Self {
+        map { Element(Swift.min(distanceFromZero, Swift.max(-distanceFromZero, T($0)))) }
+    }
+
 }

@@ -124,6 +124,11 @@ extension Array where Element: BinaryFloatingPoint {
     }
 
     @inline(__always)
+    func sumOfSquares() -> Element {
+        map { $0 * $0 }.sum
+    }
+
+    @inline(__always)
     var normalized: Self {
         let length = sqrt(reduce(0) { $0 + $1 * $1 })
         guard length > 0 else {
@@ -145,10 +150,15 @@ extension Array where Element: BinaryFloatingPoint {
     }
 
     @inline(__always)
-    var variance: Element {
+    func variance() -> Element {
         let meanValue = mean()
         let squaredDifferences = map { ($0 - meanValue) * ($0 - meanValue) }
         return squaredDifferences.mean()
+    }
+
+    @inline(__always)
+    func variance(mean: Element) -> Element {
+        map { $0 - mean }.sumOfSquares() / Element(count)
     }
 }
 

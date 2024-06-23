@@ -71,7 +71,7 @@ final class NeuralNetworkTrainer {
                 }
             }
 
-            engine.epoch += 1
+            engine.nextEpoch()
             
             await self?.updateTraining(engine: engine, errorBatch: batch)
             await self?.finalizeTraining()
@@ -106,7 +106,7 @@ final class NeuralNetworkTrainer {
                 }
             }
 
-            Task { @MainActor [self, meanSquaredErrors, correctCount, errors] in
+            Task { @MainActor [self, meanSquaredErrors, correctCount, errors, engine] in
                 let result = ValidationResult(
                     epoch: engine.epoch,
                     numberOfSamplesTrained: numberOfSamplesTrained,

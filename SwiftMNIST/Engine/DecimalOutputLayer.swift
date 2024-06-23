@@ -9,7 +9,7 @@ struct DecimalOutputLayer: LayerType {
     private(set) var weights: [[Float]]
     private(set) var bias: [Float]
 
-    let inputSize = 64
+    let inputSize = hiddenLayerSize
     let outputSize = 10
 
     private var inputIndices: Range<Int> { (0..<inputSize) }
@@ -59,7 +59,7 @@ struct DecimalOutputLayer: LayerType {
         let biasGradients = gradient
 
         for i in 0..<weightGradients.count {
-            weightGradients[i] = (input .* gradient[i]).clip(min: -5, max: 5)
+            weightGradients[i] = (input .* gradient[i]).clip(distanceFromZero: 10)
         }
 
         return (weightGradients, biasGradients)
@@ -67,7 +67,7 @@ struct DecimalOutputLayer: LayerType {
 
     mutating func updateParameters(weightGradients: [Input], biasGradients: Output, learningRate: Float) {
         for i in 0..<weights.count {
-            weights[i] = (weights[i] .- weightGradients[i] .* learningRate)//.clip(min: -100, max: 100)
+            weights[i] = (weights[i] .- weightGradients[i] .* learningRate)
             bias = bias .- (biasGradients .* learningRate)
         }
     }

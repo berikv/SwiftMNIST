@@ -29,6 +29,8 @@
 		616A3C342C1B0E910083CF7A /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C332C1B0E910083CF7A /* Power.swift */; };
 		616A3C362C1B1FDC0083CF7A /* ArrayVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C352C1B1FDC0083CF7A /* ArrayVector.swift */; };
 		616A3C382C1B20360083CF7A /* LossFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616A3C372C1B20360083CF7A /* LossFunctions.swift */; };
+		6195D9E92C264A2F00C00EAA /* BatchNormLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6195D9E82C264A2F00C00EAA /* BatchNormLayer.swift */; };
+		6195D9EB2C2781D100C00EAA /* DropoutLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6195D9EA2C2781D100C00EAA /* DropoutLayer.swift */; };
 		619A870E2C19BABD0052A3D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */; };
 		619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A87072C19BABD0052A3D8 /* ContentView.swift */; };
 		619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A870A2C19BABD0052A3D8 /* SwiftMNISTApp.swift */; };
@@ -82,6 +84,8 @@
 		616A3C332C1B0E910083CF7A /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
 		616A3C352C1B1FDC0083CF7A /* ArrayVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayVector.swift; sourceTree = "<group>"; };
 		616A3C372C1B20360083CF7A /* LossFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossFunctions.swift; sourceTree = "<group>"; };
+		6195D9E82C264A2F00C00EAA /* BatchNormLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchNormLayer.swift; sourceTree = "<group>"; };
+		6195D9EA2C2781D100C00EAA /* DropoutLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropoutLayer.swift; sourceTree = "<group>"; };
 		619A87042C19BABD0052A3D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		619A87072C19BABD0052A3D8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		619A87092C19BABD0052A3D8 /* SwiftMNIST.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SwiftMNIST.entitlements; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 				61A01B6E2C1DC084000C875E /* DecimalOutputLayer.swift */,
 				61A01B722C1DC0D3000C875E /* LayerTypes.swift */,
 				61A01B742C1DD5E6000C875E /* HiddenLayer.swift */,
+				6195D9E82C264A2F00C00EAA /* BatchNormLayer.swift */,
+				6195D9EA2C2781D100C00EAA /* DropoutLayer.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				61A01B752C1DD5E6000C875E /* HiddenLayer.swift in Sources */,
 				616A3C362C1B1FDC0083CF7A /* ArrayVector.swift in Sources */,
 				619A87122C19BABD0052A3D8 /* SwiftMNISTApp.swift in Sources */,
+				6195D9E92C264A2F00C00EAA /* BatchNormLayer.swift in Sources */,
 				616A3C212C19BE880083CF7A /* MNISTSample.swift in Sources */,
 				616A3C232C19BE9B0083CF7A /* MNISTDataset.swift in Sources */,
 				616A3C282C19BFBC0083CF7A /* MNISTDatasetView.swift in Sources */,
@@ -432,6 +439,7 @@
 				61A01B6F2C1DC084000C875E /* DecimalOutputLayer.swift in Sources */,
 				61A01B772C22FBC2000C875E /* Vector.swift_ in Sources */,
 				619A87102C19BABD0052A3D8 /* ContentView.swift in Sources */,
+				6195D9EB2C2781D100C00EAA /* DropoutLayer.swift in Sources */,
 				61A01B732C1DC0D3000C875E /* LayerTypes.swift in Sources */,
 				616A3C342C1B0E910083CF7A /* Power.swift in Sources */,
 				61A01B682C1B7C89000C875E /* NeuralNetworkTrainer.swift in Sources */,

@@ -12,25 +12,28 @@ struct NeuralNetworkEngineView: View {
                 LineMark(
                     x: .value("index", trainingBatchResult.numberOfSamples),
                     y: .value("error", trainingBatchResult.meanSquaredError / biggestMSE!))
-                .foregroundStyle(by: .value("Value", "MSE"))
+                .foregroundStyle(by: .value("Value", "Training MSE"))
             }
 
             ForEach(trainer.validationResults) { validationResult in
                 BarMark(
                     x: .value("index", validationResult.numberOfSamplesTrained),
                     y: .value("Validation correct", validationResult.correctPct))
-                .foregroundStyle(by: .value("Value", "Correct PCT"))
+                .foregroundStyle(by: .value("Value", "Validation Accuracy"))
+                .annotation(position: .topTrailing) {
+                    Text("\(validationResult.correctPct * 100, format: .number.precision(.fractionLength(1)))%")
+                }
             }
         }
         .chartForegroundStyleScale([
-            "MSE": .blue,
-            "Correct PCT": .teal,
+            "Training MSE": .blue,
+            "Validation Accuracy": .teal,
         ])
 
         VStack {
             HStack {
                 Button("Train") {
-                    trainer.train(epochs: 10)
+                    trainer.train(epochs: 20)
                 }.disabled(trainer.isTraining)
 
                 Button("Validate") {
